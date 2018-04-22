@@ -25,7 +25,7 @@ SECRET_KEY = '4j3018lj^!pj$%gb4mxly)6zfi!uas47k8!p1-48^=gml3qlte'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['la-weather-app.herokuapp.com']
 
 
 # Application definition
