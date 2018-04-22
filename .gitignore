@@ -1,3 +1,4 @@
 config_stuff/
 __pycache__/
 *.pyc
+staticfiles
