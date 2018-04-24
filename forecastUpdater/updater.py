@@ -14,6 +14,6 @@ def test():
 def start():
         scheduler = BackgroundScheduler()
         # scheduler.configure(jobstores=jobstores)
-        scheduler.add_job(forecast_api.update_forecast, 'interval', minutes=5)
+        scheduler.add_job(forecast_api.update_forecast, 'interval', minutes=45)
         scheduler.start()
     
