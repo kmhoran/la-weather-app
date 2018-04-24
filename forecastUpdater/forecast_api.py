@@ -1,13 +1,14 @@
+import os
 import requests
 from weather.models import Forecast
-from scheduler.config_stuff import config
+#from scheduler.config_stuff import config
 
 
 def _get_forecast_json():
     base_url = 'http://api.openweathermap.org/data/2.5/weather'
     encoded_city_name = 'Los%20Angeles'
     country_code = 'us'
-    access_token = config.get_weathermap_token()
+    access_token = os.environ.get('OPENWEATHERMAPS_TOKEN')
   
     r = requests.get('{0}?q={1},{2}&APPID={3}'.format(
         base_url, 
