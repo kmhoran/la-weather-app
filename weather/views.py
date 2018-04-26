@@ -13,6 +13,7 @@ class MainPage(TemplateView):
         latest_forecast = Forecast.objects.latest('timestamp')
         print("###########################################")
         print(latest_forecast.timestamp)
+        print(latest_forecast.timestamp - timedelta(hours=1))
         print(type(latest_forecast.timestamp))
         # db_timestamp = datetime.datetime.fromtimestamp(latest_forecast.timestamp)
         # Because Heroku Hobby Tier goes to sleep after inactivity
