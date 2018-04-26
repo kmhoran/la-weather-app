@@ -1,0 +1,104 @@
+[2018-04-25 20:21:59 -0700] [6813] [INFO] Starting gunicorn 19.7.1
+[2018-04-25 20:21:59 -0700] [6813] [INFO] Listening at: http://0.0.0.0:5000 (6813)
+[2018-04-25 20:21:59 -0700] [6813] [INFO] Using worker: sync
+[2018-04-25 20:21:59 -0700] [6818] [INFO] Booting worker with pid: 6818
+[2018-04-26 03:22:01 +0000] [6818] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/scheduler/scheduler/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/apps/registry.py", line 112, in populate
+    app_config.import_models()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/contrib/auth/models.py", line 2, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/contrib/auth/base_user.py", line 47, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/models/base.py", line 114, in __new__
+    new_class.add_to_class('_meta', Options(meta, app_label))
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/models/base.py", line 315, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/models/options.py", line 205, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/__init__.py", line 33, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/utils.py", line 199, in __getitem__
+    self.ensure_defaults(alias)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/utils.py", line 171, in ensure_defaults
+    conn.setdefault('ATOMIC_REQUESTS', False)
+AttributeError: 'NoneType' object has no attribute 'setdefault'
+[2018-04-26 03:22:01 +0000] [6818] [INFO] Worker exiting (pid: 6818)
+[2018-04-25 20:22:01 -0700] [6813] [INFO] Shutting down: Master
+[2018-04-25 20:22:01 -0700] [6813] [INFO] Reason: Worker failed to boot.
+[2018-04-25 20:22:18 -0700] [6909] [INFO] Starting gunicorn 19.7.1
+[2018-04-25 20:22:18 -0700] [6909] [INFO] Listening at: http://0.0.0.0:5000 (6909)
+[2018-04-25 20:22:18 -0700] [6909] [INFO] Using worker: sync
+[2018-04-25 20:22:18 -0700] [6915] [INFO] Booting worker with pid: 6915
+[2018-04-26 03:22:18 +0000] [6915] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/scheduler/scheduler/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+    django.setup(set_prefix=False)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/apps/registry.py", line 112, in populate
+    app_config.import_models()
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/contrib/auth/models.py", line 2, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/contrib/auth/base_user.py", line 47, in <module>
+    class AbstractBaseUser(models.Model):
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/models/base.py", line 114, in __new__
+    new_class.add_to_class('_meta', Options(meta, app_label))
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/models/base.py", line 315, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/models/options.py", line 205, in contribute_to_class
+    self.db_table = truncate_name(self.db_table, connection.ops.max_name_length())
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/__init__.py", line 33, in __getattr__
+    return getattr(connections[DEFAULT_DB_ALIAS], item)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/utils.py", line 199, in __getitem__
+    self.ensure_defaults(alias)
+  File "/home/kevin/_Files/_Kevin/ICS/Projects/2018_2_Spring/taskScheduling/env/lib/python3.5/site-packages/django/db/utils.py", line 171, in ensure_defaults
+    conn.setdefault('ATOMIC_REQUESTS', False)
+AttributeError: 'NoneType' object has no attribute 'setdefault'
+[2018-04-26 03:22:18 +0000] [6915] [INFO] Worker exiting (pid: 6915)
+[2018-04-25 20:22:18 -0700] [6909] [INFO] Shutting down: Master
+[2018-04-25 20:22:18 -0700] [6909] [INFO] Reason: Worker failed to boot.
