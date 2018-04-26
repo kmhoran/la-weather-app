@@ -14,12 +14,12 @@ class MainPage(TemplateView):
         latest_forecast = Forecast.objects.latest('timestamp')
         print("###########################################")
         an_hour_ago = datetime.now(tz=pytz.utc) - timedelta(hours=1)
-        # db_timestamp = datetime.datetime.fromtimestamp(latest_forecast.timestamp)
+        
         # Because Heroku Hobby Tier goes to sleep after inactivity
         if latest_forecast is None or (latest_forecast.timestamp < an_hour_ago):
-            #forecast_api.update_forecast()
-            #latest_forecast = Forecast.objects.latest('timestamp')
-            print("UPDATE")
+            forecast_api.update_forecast()
+            latest_forecast = Forecast.objects.latest('timestamp')
+            print("FORECAST UPDATED")
 
         city = latest_forecast.city
         temperature_in_c = latest_forecast.temperatue
