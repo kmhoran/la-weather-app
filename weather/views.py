@@ -1,5 +1,6 @@
 import decimal
 from datetime import datetime, timedelta
+import pytz
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from weather.models import Forecast
@@ -13,8 +14,7 @@ class MainPage(TemplateView):
         latest_forecast = Forecast.objects.latest('timestamp')
         print("###########################################")
         print(latest_forecast.timestamp)
-        print(datetime.utcnow() - timedelta(hours=1))
-        print(type(latest_forecast.timestamp))
+        print(datetime.now(tz=pytz.utc) - timedelta(hours=1))
         # db_timestamp = datetime.datetime.fromtimestamp(latest_forecast.timestamp)
         # Because Heroku Hobby Tier goes to sleep after inactivity
         if latest_forecast is None:
