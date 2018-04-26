@@ -1,14 +1,22 @@
 import decimal
+from datetime import datetime, timedelta
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from weather.models import Forecast
-from datetime import datetime 
+from forecastUpdater import forecast_api
+
     
 
 class MainPage(TemplateView):
     def get(self, request, **kwargs):
         
         latest_forecast = Forecast.objects.latest('timestamp')
+        
+        # Because Heroku Hobby Tier goes to sleep after inactivity
+        if(not latest_forecast or latest_forecast.timestamp < (datetime.now() - timedelta(hours=1))):
+            forecast_api.update_forecast()
+            latest_forecast = Forecast.objects.latest('timestamp')
+
         city = latest_forecast.city
         temperature_in_c = latest_forecast.temperatue
         temperature_in_f = (latest_forecast.temperatue * decimal.Decimal(1.8)) + 32
