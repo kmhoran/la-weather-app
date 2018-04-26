@@ -14,8 +14,9 @@ class MainPage(TemplateView):
         
         # Because Heroku Hobby Tier goes to sleep after inactivity
         if not latest_forecast or latest_forecast.timestamp < (datetime.now() - timedelta(hours=1)):
-            forecast_api.update_forecast()
-            latest_forecast = Forecast.objects.latest('timestamp')
+            #forecast_api.update_forecast()
+            #latest_forecast = Forecast.objects.latest('timestamp')
+            pass
 
         city = latest_forecast.city
         temperature_in_c = latest_forecast.temperatue
