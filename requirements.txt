@@ -10,7 +10,7 @@ psycopg2==2.7.4
 pytz==2018.4
 requests==2.18.4
 six==1.11.0
-SQLAlchemy==1.2.6
+SQLAlchemy==1.3.8
 tzlocal==1.5.1
 urllib3==1.22
 whitenoise==3.3.1
