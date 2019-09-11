@@ -8,7 +8,7 @@ gunicorn==19.7.1
 idna==2.6
 psycopg2==2.7.4
 pytz==2018.4
-requests==2.18.4
+requests==2.20.0
 six==1.11.0
 SQLAlchemy==1.2.6
 tzlocal==1.5.1
