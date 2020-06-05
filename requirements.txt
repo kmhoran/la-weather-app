@@ -2,7 +2,7 @@ APScheduler==3.5.1
 certifi==2018.4.16
 chardet==3.0.4
 dj-database-url==0.5.0
-Django==2.0.4
+Django==2.2.13
 django-heroku==0.3.1
 gunicorn==19.7.1
 idna==2.6
